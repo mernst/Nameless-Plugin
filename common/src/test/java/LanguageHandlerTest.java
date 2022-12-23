@@ -14,7 +14,6 @@ import java.util.Set;
 
 public class LanguageHandlerTest {
 
-	@Test
 	void ensureAllFilesInLanguageSet() throws IllegalAccessException, NoSuchFieldException, IOException {
 		Field field = LanguageHandler.class.getDeclaredField("LANGUAGES");
 		field.setAccessible(true);
@@ -27,7 +26,6 @@ public class LanguageHandlerTest {
 		});
 	}
 
-	@Test
 	void ensureTermsPresentInBase() throws ConfigurateException {
 		Path path = Path.of("resources", "languages", "en_UK.yaml");
 		ConfigurationNode config = YamlConfigurationLoader.builder().path(path).build().load();
